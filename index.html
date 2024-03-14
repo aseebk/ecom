@@ -12,14 +12,52 @@
    
 <section>
    <div style=" background-image: linear-gradient(
-    to left top,
-    rgb(217, 24, 24),
-    rgb(193, 73, 119)
+  
+    rgb(225, 80, 80),
+   rgb(205, 149, 110)
   );">
       
-      <h1 align="center" style="color: rgb(0, 0, 0);"><i class="fa-solid fa-cart-shopping"><b>E-cart</b></i></h1>
+      <h1 align="center" style="color: rgb(244, 236, 236);"><i class="fa-solid fa-cart-shopping"><b>E-cart</b></i></h1>
       <hr>
      <a href="./page.html"> <img src="https://img.freepik.com/free-vector/super-sale-banner-template-design_8829-2697.jpg?w=1380&t=st=1710133705~exp=1710134305~hmac=b71b801d205e56c478bf86a819083c6b1c56e06f04e62322fed6ff372ea6ca9e" width="100%" height="500px" alt=""></a>
+
+
+     <div class="offer">
+      <h1 class="tag"><i class="fa-solid fa-bullhorn"></i>Big Billion Days are Comming....</h1>
+      <p class="tag1">Sale is Live<i class="fa-solid fa-shop fa-beat-fade" style="color: rgb(2, 2, 2);"></i></p>
+      <img class="tag2" src="https://trak.in/wp-content/uploads/2020/10/IMG_20201003_192653-1024x498.jpg" alt="" >
+    <button class="tag3">ShopNow</button>
+
+    <div class="timer">
+      <div id="clocks">  
+        <div>  
+          <span  id="day"></span>  
+          <div>Days</div>  
+        </div>  
+        <div>  
+          <span  id="hour"></span>  
+          <div>Hours</div>  
+        </div>  
+        <div>  
+          <span id="minute"></span>  
+          <div>Minutes</div>  
+        </div>  
+        <div>  
+          <span id="second"></span>  
+          <div>Seconds</div>  
+        </div>  
+      </div>  
+    </div>
+    <p class="t1"></p>  
+
+   
+
+
+    
+     </div>
+
+
+
 </section>
     <hr>
 <nav align="center">
@@ -174,7 +212,7 @@
 
     </nav>
     <hr>
-   <section style="background-color: rgb(220, 187, 191);">
+   <section style="background-color: rgb(244, 237, 238);">
   <div class="row">
       
                 <div class="card">
@@ -267,6 +305,28 @@
 
 </footer>
 <hr>
+<script>
+ const date_time1 = new Date('March 16, 2024 04:02:31').getTime();  
+
+var fun = setInterval(function() {  
+
+const date_time2 =  new Date().getTime();  
+
+const time = date_time1 - date_time2;  
+
+const days = Math.floor(time / (1000 * 60 * 60 * 24));  
+const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));  
+const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));  
+const seconds = Math.floor((time % (1000 * 60)) / 1000);  
+
+document.getElementById("day").innerHTML = days;  
+document.getElementById("hour").innerHTML = hours;  
+document.getElementById("minute").innerHTML = minutes;  
+document.getElementById("second").innerHTML = seconds;  
+}, 5);  
+
+
+</script>
   
 </body>
 </html>
