@@ -49,15 +49,7 @@
       </div>  
     </div>
     <p class="t1"></p>  
-
-   
-
-
-    
-     </div>
-
-
-
+</div>
 </section>
     <hr>
 <nav align="center">
@@ -306,26 +298,31 @@
 </footer>
 <hr>
 <script>
- const date_time1 = new Date('March 16, 2024 04:02:31').getTime();  
+ const date_time1 = new Date('March 16, 2024 04:02:31').getTime();
 
-var fun = setInterval(function() {  
+var fun = setInterval(function() {
+    const date_time2 = new Date().getTime();
+    const time = date_time1 - date_time2;
 
-const date_time2 =  new Date().getTime();  
+    if (time <= 0) {
+        clearInterval(fun);
+        document.getElementById("day").innerHTML = "00";
+        document.getElementById("hour").innerHTML = "00";
+        document.getElementById("minute").innerHTML = "00";
+        document.getElementById("second").innerHTML = "00";
+        return;
+    }
 
-const time = date_time1 - date_time2;  
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
 
-const days = Math.floor(time / (1000 * 60 * 60 * 24));  
-const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));  
-const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));  
-const seconds = Math.floor((time % (1000 * 60)) / 1000);  
-
-document.getElementById("day").innerHTML = days;  
-document.getElementById("hour").innerHTML = hours;  
-document.getElementById("minute").innerHTML = minutes;  
-document.getElementById("second").innerHTML = seconds;  
-}, 5);  
-
-
+    document.getElementById("day").innerHTML = days;
+    document.getElementById("hour").innerHTML = hours.toString().padStart(2, "0"); 
+    document.getElementById("minute").innerHTML = minutes.toString().padStart(2, "0"); 
+    document.getElementById("second").innerHTML = seconds.toString().padStart(2, "0");
+}, 1000);
 </script>
   
 </body>
